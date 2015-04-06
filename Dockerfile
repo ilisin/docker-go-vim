@@ -3,9 +3,13 @@ MAINTAINER ilisin gao <lisin.gao@gmail.com>
 
 RUN yum update -y
 RUN yum remove vi -y
+RUN yum install -y passwd openssh-server initscripts
 RUN yum install -y gcc make git
 RUN yum install -y ruby ruby-devel lua lua-devel luajit luajit-devel ctags python \
   python-devel tcl-devel ncurses-devel
+
+RUN echo 'root:root123' | chpasswd
+RUN /usr/sbin/sshd-keygen
 
 COPY go /opt/go
 COPY vim74 /root/vim74
@@ -28,4 +32,6 @@ ENV PATH $PATH:$GOROOT/bin:$GOPATH/bin
 
 RUN /bin/sh /gobin-build.sh
 
-CMD ["/bin/bash"]
+EXPOSE 22
+
+CMD /usr/sbin/sshd -D
