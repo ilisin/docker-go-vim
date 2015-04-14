@@ -13,9 +13,9 @@ set ruler
 set backspace=indent,eol,start
 
 "tab setting
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
@@ -31,7 +31,7 @@ set nowritebackup
 "set encoding=utf-8
 
 "set laststatus=2
-"set number                                    "显示行号
+set number                                    "显示行号
 "set undofile                                  "无限undo
 "set nowrap                                    "禁止自动换行
 "autocmd! bufwritepost _vimrc source %         "自动载入配置文件不需要重启
@@ -148,7 +148,7 @@ Bundle 'junegunn/vim-easy-align'
   nmap <Leader>a <Plug>(EasyAlign)
 
 Bundle "Solarized"
-  colorscheme solarized
+  " colorscheme solarized
   let g:solarized_termtrans  = 1
   let g:solarized_termcolors = 256
   let g:solarized_contrast   = "high"
@@ -177,7 +177,7 @@ Bundle 'The-NERD-tree'
   let NERDTreeShowHidden=1
   let NERDTreeIgnore=['\.$','\~$']
   let NERDTreeShowLineNumbers=1
-  let NERDTreeWinPos=1
+  let NERDTreeWinPos=0
 
 Bundle 'The-NERD-Commenter'
   let NERDShutUp=1
@@ -205,11 +205,14 @@ Bundle 'Shougo/neocomplete.vim'
   let g:neocomplete#enable_at_startup=1
 Bundle 'Shougo/neosnippet.vim'
 Bundle 'majutsushi/tagbar'
-  nmap <F8> :TagbarToggle<CR>
+  nmap <F7> :TagbarToggle<CR>
 " NERDTree config
 Bundle 'scrooloose/nerdtree'
   nmap <C-n> :NERDTreeToggle<CR>
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+Bundle 'solarnz/thrift.vim'
+Bundle 'fatih/molokai'
+  colorscheme molokai
 
 "放置在Bundle的设置后，防止意外BUG
 filetype plugin indent on
