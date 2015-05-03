@@ -30,8 +30,16 @@ ENV GOOS linux
 ENV GOPATH /workplace/go
 ENV PATH $PATH:$GOROOT/bin:$GOPATH/bin
 
+RUN echo "export GOROOT=/opt/go" >> /root/.bashrc
+RUN echo "export GOARCH=amd64" >> /root/.bashrc
+RUN echo "export GOOS=linux" >> /root/.bashrc
+RUN echo "export GOPATH=/workplace/go" >> /root/.bashrc
+RUN echo "export PATH=$PATH:$GOPATH/bin:$GOROOT/bin" >> /root/.bashrc
+
 RUN /bin/sh /gobin-build.sh
 
-EXPOSE 22
+VOLUME /workplace
+
+EXPOSE 22 1000 1001 1002 1003 1004 1005 1006 1007 1008 1009 1010
 
 CMD /usr/sbin/sshd -D
