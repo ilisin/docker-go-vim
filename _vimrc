@@ -31,7 +31,7 @@ set nowritebackup
 "set encoding=utf-8
 
 "set laststatus=2
-"set number                                    "显示行号
+set number                                    "显示行号
 "set undofile                                  "无限undo
 "set nowrap                                    "禁止自动换行
 "autocmd! bufwritepost _vimrc source %         "自动载入配置文件不需要重启
@@ -147,12 +147,21 @@ Bundle 'junegunn/vim-easy-align'
   vmap <Enter> <Plug>(EasyAlign)
   nmap <Leader>a <Plug>(EasyAlign)
 
+<<<<<<< HEAD
 "Bundle "Solarized"
   "colorscheme solarized
   "let g:solarized_termtrans  = 1
   "let g:solarized_termcolors = 256
   "let g:solarized_contrast   = "high"
   "let g:solarized_visibility = "high"
+=======
+Bundle "Solarized"
+  " colorscheme solarized
+  let g:solarized_termtrans  = 1
+  let g:solarized_termcolors = 256
+  let g:solarized_contrast   = "high"
+  let g:solarized_visibility = "high"
+>>>>>>> e21083726e9f189669162890c6f3cb21fee01dac
 
 Bundle "ervandew/supertab"
   let g:SuperTabDefaultCompletionType = "<c-n>"
@@ -177,7 +186,7 @@ Bundle 'The-NERD-tree'
   let NERDTreeShowHidden=1
   let NERDTreeIgnore=['\.$','\~$']
   let NERDTreeShowLineNumbers=1
-  let NERDTreeWinPos=1
+  let NERDTreeWinPos=0
 
 Bundle 'The-NERD-Commenter'
   let NERDShutUp=1
@@ -205,15 +214,22 @@ Bundle 'Shougo/neocomplete.vim'
   let g:neocomplete#enable_at_startup=1
 Bundle 'Shougo/neosnippet.vim'
 Bundle 'majutsushi/tagbar'
-  nmap <F8> :TagbarToggle<CR>
+  nmap <F7> :TagbarToggle<CR>
 " NERDTree config
 Bundle 'scrooloose/nerdtree'
   nmap <C-n> :NERDTreeToggle<CR>
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+<<<<<<< HEAD
 Bundle 'fatih/molokai'
   colorscheme molokai
   let g:molokai_original = 1
   let g:rehash256 = 1
+=======
+Bundle 'solarnz/thrift.vim'
+Bundle 'fatih/molokai'
+  colorscheme molokai
+
+>>>>>>> e21083726e9f189669162890c6f3cb21fee01dac
 "放置在Bundle的设置后，防止意外BUG
 filetype plugin indent on
 syntax on
