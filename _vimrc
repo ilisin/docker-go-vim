@@ -13,9 +13,9 @@ set ruler
 set backspace=indent,eol,start
 
 "tab setting
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
@@ -147,12 +147,12 @@ Bundle 'junegunn/vim-easy-align'
   vmap <Enter> <Plug>(EasyAlign)
   nmap <Leader>a <Plug>(EasyAlign)
 
-Bundle "Solarized"
-  colorscheme solarized
-  let g:solarized_termtrans  = 1
-  let g:solarized_termcolors = 256
-  let g:solarized_contrast   = "high"
-  let g:solarized_visibility = "high"
+"Bundle "Solarized"
+  "colorscheme solarized
+  "let g:solarized_termtrans  = 1
+  "let g:solarized_termcolors = 256
+  "let g:solarized_contrast   = "high"
+  "let g:solarized_visibility = "high"
 
 Bundle "ervandew/supertab"
   let g:SuperTabDefaultCompletionType = "<c-n>"
@@ -210,7 +210,10 @@ Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
   nmap <C-n> :NERDTreeToggle<CR>
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
+Bundle 'fatih/molokai'
+  colorscheme molokai
+  let g:molokai_original = 1
+  let g:rehash256 = 1
 "放置在Bundle的设置后，防止意外BUG
 filetype plugin indent on
 syntax on
